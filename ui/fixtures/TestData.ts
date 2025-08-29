@@ -29,3 +29,7 @@ export const ADDRESSES = {
   home: '123 Main St, Springfield',
   office: '456 Elm St, Metropolis',
 };
+
+export const MESSAGES = {
+  invalid_user_login_error: 'Epic sadface: Username and password do not match any user in this service',
+}
