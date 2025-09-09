@@ -1,1 +1,3 @@
 /allure-results
+/api/tests/__pycache__
+/ui/allure-results
