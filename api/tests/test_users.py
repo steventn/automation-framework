@@ -1,10 +1,6 @@
-import sys
-import os
-sys.path.insert(0, os.path.abspath(os.path.join(os.path.dirname(__file__), '../../')))
-
 import pytest
-from core.api.user_api import UserAPI
-from core.api.schema import UserSchema
+from ..core.api.user_api import UserAPI
+from ..core.api.schema import UserSchema
 
 @pytest.fixture(scope="module")
 def user_api():
@@ -38,3 +34,14 @@ def test_create_user(user_api):
 
     user = response.json()
     assert user["name"] == payload["name"]
+
+def test_get_posts(user_api):
+    response = user_api.get_posts()
+    assert response.status_code == 200
+    posts = response.json()
+    assert len(posts) == 100
+    for post in posts:
+        assert "userId" in post
+        assert "id" in post
+        assert "title" in post
+        assert "body" in post

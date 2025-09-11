@@ -12,3 +12,6 @@ class UserAPI:
 
     def create_user(self, payload):
         return self.client.post("/users", json=payload)
+
+    def get_posts(self):
+        return self.client.get("/posts")

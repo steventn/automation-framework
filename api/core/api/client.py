@@ -4,7 +4,8 @@ import os
 
 class APIClient:
     def __init__(self, env="dev"):
-        config_path = os.path.join(os.path.dirname(__file__), "../../config/config.yaml")
+        config_path = os.path.join(os.path.dirname(__file__), "..", "..", "config", "config.yml")
+        config_path = os.path.abspath(config_path)
         with open(config_path, "r") as f:
             config = yaml.safe_load(f)
 
