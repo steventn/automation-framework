@@ -5,3 +5,4 @@
 /api/__pycache__
 /api/core/__pycache__
 /api/core/api/__pycache__
+*.pyc
